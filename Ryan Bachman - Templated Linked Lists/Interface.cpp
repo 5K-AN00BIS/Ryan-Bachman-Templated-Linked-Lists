@@ -2,6 +2,47 @@
 
 using namespace std;
 
+// Build out the testing suite. Not quite sure how to do this, but wanted it in the code so I could at least start on it.
+bool LinkedListTestingSuite()
+{
+	// Starts off the test_success as true so it's guaranteed to run at least once and resets whenever called.
+	bool test_success = true;
+
+	// Create a new LinkedList for testing
+	LinkedList<int>* testingList = new LinkedList<int>();
+	
+	// Check to see if the list is created empty as intended.
+	if (testingList->isEmpty())
+	{
+		cout << "The list was created and is empty as needed." << endl;
+	}
+	else
+	{
+		cout << "Something was on the ship the whole time. This list didn't create empty." << endl;
+		test_success = false; // Set test_success to false so we can let the user know something failed.
+	}
+
+	return test_success;
+}
+
+// Interface with the user to let them know if tests were good or not.
+bool TestingSuite()
+{
+	system("cls"); // Clear the screen for the user.
+	bool list_test_status = LinkedListTestingSuite();
+
+	if (list_test_status) // If the status is successful and the bool is still true
+	{
+		cout << "All tests were run successfully. Everything is working as intended!\n" << endl;
+		return true;
+	}
+	else // Something failed in the testing so test_success is set to false.
+	{
+		cout << "At least one test has failed! Uh oh!\n" << endl;
+		return false;
+	}
+}
+
 // Creates the interface class, which will be the meat and potatoes of this entire program.
 void Interface()
 {
@@ -39,7 +80,7 @@ void Interface()
 			// Ask user for input
 			cout << "Please enter the integer you want to find in the list: " << endl;
 			cin >> input;
-			hold = atoi(input);
+			hold = atoi(input); // Convert string input to integer for this assignment.
 
 			// Check to see if the linked list is empty first.
 			if (numberList->isEmpty())
@@ -60,7 +101,7 @@ void Interface()
 			// Ask user for input
 			cout << "Please insert an integer: ";
 			cin >> input;
-			hold = atoi(input);
+			hold = atoi(input); // Convert string input to integer for this assignment.
 
 			// First check to see if the list is empty using our IsEmpty() function from LinkedList.h
 			if (numberList->isEmpty())
@@ -83,7 +124,7 @@ void Interface()
 			// Ask user for input
 			cout << "Enter the number you want to delete from the list: ";
 			cin >> input;
-			hold = atoi(input);
+			hold = atoi(input); // Convert string input to integer for this assignment.
 
 			// Initiates the iterator at the head to get it ready for work.
 			Iterator<int>* i = numberList->iteratorHead();
@@ -155,6 +196,7 @@ void Interface()
 		{
 			system("cls"); // Clear the screen for a clean interface.
 			cout << "You've started the Automated Testing Suite.\n" << endl;
+			TestingSuite();
 			break;
 		}
 		case 0: // If menuSelection is equal to 0.
