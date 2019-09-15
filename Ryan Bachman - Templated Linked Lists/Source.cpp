@@ -22,3 +22,21 @@
 
 // Templated add functions will do the function no matter what the data type.
 // Will need current and previous pointers so we can move backwards if need be. Previous will always be one node behind.
+
+// Preprocessor Directives
+#include <iostream>
+#include <memory>
+#include "Interface.h"
+
+using namespace std;
+
+// Main function begins.
+int main()
+{
+	// Call the menu function.
+	Interface();
+
+	system("pause"); // So it stops before quitting out.
+	return 0;
+
+} // End of main function.
