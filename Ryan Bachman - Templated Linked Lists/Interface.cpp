@@ -192,7 +192,7 @@ void Interface()
 
 			break; // End the case.
 		}
-		case 5: // If menuSelection is equal to 6.
+		case 5: // If menuSelection is equal to 5.
 		{
 			system("cls"); // Clear the screen for a clean interface.
 			cout << "You've started the Automated Testing Suite.\n" << endl;

@@ -27,6 +27,7 @@ public:
 	~LinkedList()
 	{
 		delete head;
+		delete current;
 		delete tail;
 	}
 
